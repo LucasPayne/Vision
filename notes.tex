@@ -103,5 +103,59 @@ then the possible extreme instability of the spectral method can cause the metho
 
 Lecture 12b Gauss: Normal distribution as noise distribution giving arithmetic mean as optimal estimator.
 
+Indirect versus direct methods.
+Indirect methods. A linear algorithm (such as the 8-point algorithm) followed by bundle adjustment
+forgets the photometric properties entirely. The images are abstracted by a sparse set of noisy point and line feature matches
+with possible outliers.
+
+This culls out the majority of information contained in the images, but tries to maintain the essential geometric
+information from which a correct structure and motion reconstruction can be made.
+
+Feature-based versus direct methods, Engel, Sturm, Cremers 2013
+Developed from ideas in algorithms for optical flow
+
+Non-linear optimization used in OpenCV reconstruction.
+http://ceres-solver.org/features.html
+Has features intended for bundle adjustment.
+
+Dense tracking and mapping. Regularize with inverse depth gradient to alleviate biases due to far objects contributing
+less of their depth gradients.
+
+Lecture 12d 1:14: Overview of large-scale direct monocular SLAM.
+
+
+Variational methods
+
+Without a clear goal, such as a cost function relating to a real statistical interpretation, multi-step numerical methods
+can be very hard to analyze and understand. Complex multi-step combinatorial algorithms, such as closest-point search, have
+a direct goal, and can be proved. However, machinery like the Canny edge detector effectively reaches toward a goal in some intuitive sense,
+the goal here being the segmentation of object edges. There is no exact statement of the properties of the mathematical object we want to compute
+before the formulation of the algorithm.
+
+In contrast, the Mumford-Shah functional, for example, is formulated with the assumption that
+``curves which separate regions for which constant or smooth approximation on the interior and exterior gives the least error'' corresponds well with our intuitive idea
+of object edges in an image. Although this idea can fail, for example with an image of a zebra, the Mumford-Shah functional gives an exactly stated
+(although complex) cost function to minimize.
+
+Lecture 13, 23:00: Advantages of variational methods
+
+https://vision.in.tum.de/research/convex_relaxation_methods
+
+
+
+Optical flow
+
+Assumptions.
+Brightness constancy. Sufficiently textured world where motion of brightness patterns indicates relative motion.
+This fails with specular surfaces (the virtual image falsly identified as motion).
+Lambertian objects with constant lighting, moving along symmetries. For example a rotating sphere. Flat Lambertian objects
+with uniform lighting (such as a brightly lit white wall and a moving camera). The motion is not identified here.
+
+Horn and Schunck:
+    ``For convenience, we tackle a particularly simple world where the apparent velocity of brightness patterns can be directly
+      identified with the movement of surfaces in the scene.''
+
+
+
 
 \end{document}
