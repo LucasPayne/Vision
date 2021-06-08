@@ -1,3 +1,9 @@
 [submodule "cg_sandbox"]
 	path = cg_sandbox
 	url = https://www.github.com/LucasPayne/cg_sandbox
+[submodule "fastfusion"]
+	path = fastfusion
+	url = https://github.com/tum-vision/fastfusion
+[submodule "Mapper/glfw"]
+	path = Mapper/glfw
+	url = https://github.com/glfw/glfw.git
